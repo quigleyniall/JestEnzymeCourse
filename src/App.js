@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="container">
       <h3>Jotto</h3>
-      <Congrats success={false} />
+      <Congrats success={true} />
       <Input />
       <GuessedWords guessedWords={guessedWords} />
     </div>
