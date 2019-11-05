@@ -1,8 +1,8 @@
-const secretWordReducers = (state = null, action) => {
+const secretWord = (state = null, action) => {
   switch (action.type) {
     default:
       return state;
   }
 }
 
-export default secretWordReducers;
+export default secretWord;
