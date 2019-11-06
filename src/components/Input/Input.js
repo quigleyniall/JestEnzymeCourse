@@ -17,6 +17,7 @@ export class UnconnectedInput extends React.Component {
     if (currentGuess && currentGuess.length > 0) {
       guessWord(currentGuess);
     }
+    this.setState({ currentGuess: '' })
   }
 
   handleChange = e => {
