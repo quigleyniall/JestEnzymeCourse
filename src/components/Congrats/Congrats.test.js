@@ -5,7 +5,7 @@ import { findByTestAttr, checkProps } from '../../test/testUtils';
 import Congrats from './Congrats';
 
 
-const defaultProps = { success: false };
+const defaultProps = { success: true };
 
 const setup = (props = {}) => {
   const setupProps = {...defaultProps, ...props}
@@ -14,15 +14,14 @@ const setup = (props = {}) => {
 
 test('renders without crashing', () => {
   const wrapper = setup();
-  const component = findByTestAttr(wrapper, 'component-congrats');
-  
+  const component = findByTestAttr(wrapper, 'component-congrats');  
   expect(component.length).toBe(1);
 });
 
 test('renders no text when success prop is false', () => {
-  const wrapper = setup();
+  const wrapper = setup({ success: false });
   const component = findByTestAttr(wrapper, 'component-congrats');
-  expect(component.text()).toBe('');
+  expect(component.length).toBe(0);
 });
 
 test('renders non-empty congrats message when success prop is true', () => {
@@ -34,5 +33,4 @@ test('renders non-empty congrats message when success prop is true', () => {
 test('Does not throw warning with expected props', () => {
   const expectedProps = { success: false };
   checkProps(Congrats, expectedProps);
-
 })

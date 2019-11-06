@@ -64,4 +64,7 @@ describe('if there are words guessed', () => {
     expect(guessedWordsNode.length).toBe(guessedWords.length);
   })
 
+  test('the number increases each time a word is guessed', () => {
+
+  })
 });
